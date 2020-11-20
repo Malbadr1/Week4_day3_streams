@@ -9,21 +9,20 @@ public class alphabetical_list {
 
     public static void main(String args[])  {
 
-       sortWords("g://data");
+       sortWords("g://data.txt");
 
     }
 
     public static ArrayList sortWords(String nameOfFile){
-        ArrayList<String> sort=new ArrayList<>();
+        ArrayList<String> sort1=new ArrayList<>();
         try {
-            File file=new File("g://data");
+            File file=new File("g://data.txt");
             Scanner scanner=new Scanner(file);
             while (scanner.hasNext()){
                 String output= scanner.next();
-                sort.add(output);
+                sort1.add(output);
             }
             scanner.close();
-
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -31,18 +30,19 @@ public class alphabetical_list {
 
         System.out.println("before sort : ");
 
-        for (String i:sort) {
-            System.out.println(i + " ");
+        for (String i:sort1) {
+            System.out.print(i + " , ");
         }
 
-        Collections.sort(sort);
+
+        Collections.sort(sort1);
             System.out.println("after sort");
 
-            for (String i:sort) {
-                System.out.println(i+" ");
+            for (String i:sort1) {
+                System.out.print(i+" , ");
 
         }
-            return sort;
+            return sort1;
     }
 
 }
